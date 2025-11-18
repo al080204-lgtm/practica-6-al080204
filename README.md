@@ -1,50 +1,33 @@
+Proyecto: #practica-6-al020480
 # Modelo de Corte y Relleno para Carreteras
+🎯 Objetivo
 
-## 🎯 Objetivo
-Este proyecto tiene como objetivo modelar el cálculo de **volúmenes de corte y relleno** a lo largo de un perfil longitudinal de carretera, utilizando Python y una interfaz gráfica desarrollada con Tkinter.
+Este apartado describe, de forma clara y estructurada, el propósito del modelo desarrollado para calcular volúmenes de corte y relleno a lo largo del perfil longitudinal de una carretera. El sistema combina procesamiento numérico, estructuras de datos, visualización gráfica y una interfaz amigable, permitiendo comprender y aplicar conceptos fundamentales de la Ingeniería Civil.
 
 Los estudiantes serán capaces de:
-- Comprender el proceso de modelado de un problema real de Ingeniería Civil.
-- Utilizar listas y matrices para representar datos topográficos.
-- Crear funciones modulares para analizar, diseñar y probar soluciones.
-- Graficar perfiles longitudinales del terreno y la rasante.
-- Integrar una GUI para facilitar el uso del modelo.
 
----
+Comprender cómo se modela un problema real de movimiento de tierras.
 
-## 📚 Marco Teórico
-En un proyecto de construcción de carreteras, es necesario comparar el perfil del **terreno natural** con la **rasante de diseño**. Esta comparación permite obtener los volúmenes aproximados de:
+Representar información topográfica usando listas y matrices.
 
-- **Corte:** Cuando el terreno está por encima de la rasante.
-- **Relleno:** Cuando el terreno está por debajo de la rasante.
+Implementar funciones modulares para análisis, diseño y verificación.
 
-El cálculo básico por estación es:
+Generar gráficos que comparan el perfil del terreno con la rasante de diseño.
 
-\[
-\Delta h = Elevación_{terreno} - Elevación_{rasante}
-\]
+Usar una GUI hecha en Tkinter para interactuar fácilmente con el modelo.
 
-- Si \( \Delta h > 0 \), existe **corte**.
-- Si \( \Delta h < 0 \), existe **relleno**.
+📚 Marco Teórico
 
-Los valores por estación se suman para obtener los volúmenes totales.
+En el diseño geométrico de carreteras, se compara el perfil del terreno natural con la rasante de diseño para determinar cuánto material debe excavarse (corte) o rellenarse (terraplenes). Esta comparación se realiza estación por estación a lo largo del eje del proyecto.
 
----
+La diferencia vertical entre el terreno y la rasante se define como:
 
-## 🧱 Código organizado
-El proyecto se divide en módulos:
+Δh = Elevación_terreno – Elevación_rasante
 
-### `src/datos.py`
-Almacena la matriz de elevaciones.
+Interpretación:
 
-### `src/calculos.py`
-Realiza el cálculo de corte y relleno.
+Δh > 0 → Corte: el terreno está más alto que la rasante, por lo que se debe excavar.
 
-### `src/graficas.py`
-Genera el perfil longitudinal.
+Δh < 0 → Relleno: la rasante está por encima del terreno, por lo que se debe aportar material.
 
-### `src/main.py`
-Ejecuta el modelo en consola.
-
-### `interfaz/gui.py`
-Interfaz gráfica completa con cálculo y gráficas.
+Al calcular esta diferencia en todas las estaciones y aplicar métodos de integración como el método del trapecio, se obtienen las áreas y volúmenes aproximados de corte y relleno. Estos valores son esenciales para estimar costos y planificar la ejecución de obra.
