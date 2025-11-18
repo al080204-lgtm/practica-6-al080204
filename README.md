@@ -66,9 +66,3 @@ Ejecuta el modelo en consola.
 ### `interfaz/gui.py`
 Interfaz gráfica completa con cálculo y gráficas.
 
-
----
-
-
-## ▶️ Ejecución del Proyecto
-Para ejecutar la aplicación gráfica:
